@@ -3,3 +3,4 @@ user_group_default: '{{item.name}}'
 user_groups_default: []
 user_home_default: '/home/{{item.name}}'
 user_shell_default: '/bin/bash'
+user_pass_hash_default: '!'

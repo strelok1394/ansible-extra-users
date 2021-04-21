@@ -7,6 +7,7 @@
 - name: add user
   user:
     name: '{{item.name}}'
+    password: '{{item.pass_hash|default(user_pass_hash_default)}}'
     group: '{{item.group|default(user_group_default)}}'
     groups: '{{item.groups|default(user_groups_default)}}'
     home: "{{item.home|default(user_home_default)}}"

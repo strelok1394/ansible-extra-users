@@ -1,6 +1,7 @@
 ---
 users:
  - name: "user1"             # required
+#   pass_hash: ""             # optional (default "!" )
 #   group: "user1"            # optional (default username)
 #   groups: []                # optional (default [])
 #   home: ""                  # optional (default /home/username)
