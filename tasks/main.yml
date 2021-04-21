@@ -1,0 +1,10 @@
+---
+- name: Purge users
+  include: _purge-user.yml
+  loop: '{{ users }}'
+  when: item.state == 'absent'
+
+- name: add users
+  include: _add-user.yml
+  loop: '{{ users }}'
+  when: item.state == 'present'  

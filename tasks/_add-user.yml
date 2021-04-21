@@ -1,0 +1,15 @@
+- name: add user
+  user:
+    name: '{{item.name}}'
+    group: '{{item.group|default(user_group_default)}}'
+    groups: '{{item.groups|default(user_groups_default)}}'
+    home: "{{item.home|default(user_home_default)}}"
+    state: '{{item.state}}'
+
+- name: add id_rsa.pub to authorized_keys
+  authorized_key:
+    user: '{{item.name}}'
+    state: present
+    path: '{{item.home|default(user_home_default)}}/.ssh/authorized_keys'
+    comment: '{{item.name}}'
+    key: "{{ lookup('file', '{{item.rsa_pub_file}}') }}"

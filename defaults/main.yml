@@ -1,0 +1,22 @@
+---
+users:
+ - name: "user1"             # required
+#   group: "user1"            # optional
+#   groups: []                # optional
+#   home: ""       # optional
+   rsa_pub_file: "test.file" # required
+   state: ""                 # required (present|absent)
+# - name: "user2"
+#   group: "user2_group"
+#   groups: ['users_group1', 'users_group2']
+#   home: "/home/user1"
+#   rsa_pub_file: "test.file"
+#   state: "absent"
+# - name: "user3"
+#   group: "user3_group"
+#   groups: ['users_group1', 'users_group2']
+#   home: "/home/user1"
+#   rsa_pub_file: "test.file"
+#   state: "present"
+
+absent_users_backup_home_dir_path: '/root'

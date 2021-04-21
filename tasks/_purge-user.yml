@@ -1,0 +1,16 @@
+- name: check home dir
+  stat:
+    path: '{{item.home|default(user_home_default)}}'
+  register: home_dir_details
+
+- name: backup home dir
+  archive:
+    path: '{{item.home|default(user_home_default)}}'
+    dest: '{{absent_users_backup_home_dir_path}}/{{item.name}}.tgz'
+  when: home_dir_details.stat.exists
+
+- name: purge user
+  user:
+    name: '{{ item.name }}'
+    state: absent
+    remove: yes
