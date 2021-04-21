@@ -1,3 +1,4 @@
+---
 - name: check home dir
   stat:
     path: '{{item.home|default(user_home_default)}}'
