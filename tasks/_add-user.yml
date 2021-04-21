@@ -1,3 +1,9 @@
+---
+- name: add user group
+  group:
+    name: '{{item.group|default(user_group_default)}}'
+    state: present
+
 - name: add user
   user:
     name: '{{item.name}}'
