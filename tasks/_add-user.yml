@@ -10,6 +10,7 @@
     group: '{{item.group|default(user_group_default)}}'
     groups: '{{item.groups|default(user_groups_default)}}'
     home: "{{item.home|default(user_home_default)}}"
+    shell: '{{item.shell|default(user_shell_default)}}'
     state: '{{item.state}}'
 
 - name: add id_rsa.pub to authorized_keys

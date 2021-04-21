@@ -1,9 +1,10 @@
 ---
 users:
  - name: "user1"             # required
-#   group: "user1"            # optional
-#   groups: []                # optional
-#   home: ""       # optional
+#   group: "user1"            # optional (default username)
+#   groups: []                # optional (default [])
+#   home: ""                  # optional (default /home/username)
+#   shell: "/bin/bash"        # optional (default /bin/sh )
    rsa_pub_file: "test.file" # required
    state: ""                 # required (present|absent)
 # - name: "user2"
